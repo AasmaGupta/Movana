@@ -30,7 +30,7 @@ function App() {
       <Route path="/chatbot" element={<Chatbot />} />
 
       <Route path="/payment" element={<Payment />} />
-      <Route path="/paymentsuccess" element={<PaymentSuccess />} />
+      <Route path="/paymentsuccess/:id" element={<PaymentSuccess />}/>
       
 
     </Routes>

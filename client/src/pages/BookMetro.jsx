@@ -79,7 +79,7 @@ function BookMetro() {
           <option>1 AM - 2 AM</option>
         </select>
 
-        <button onClick={handleSubmit}>Continue</button>
+        <button onClick={handleSubmit} disabled={!metroData.originMetro & !metroData.destinationMetro & !metroData.metroSlot}>Continue</button>
 
       </div>
     </div>

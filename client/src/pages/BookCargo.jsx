@@ -24,6 +24,12 @@ function BookCargo() {
     };
 
     const handleSubmit = async () => {
+
+        if (Object.values(formData).some(value => value === "")) {
+            alert("Please fill all fields");
+            return;
+        }
+
         try {
             const response = await axios.post(
                 "http://localhost:8000/api/cargo",
