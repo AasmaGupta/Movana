@@ -55,7 +55,7 @@ function Landing() {
 
         <div className="hero-right">
           <img
-            src="/hero.png"
+            src="/hero.jpeg"
             alt="MOVE Preview"
           />
         </div>

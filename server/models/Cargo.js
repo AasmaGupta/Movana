@@ -1,68 +1,127 @@
 const mongoose = require("mongoose");
 
 const cargoSchema = new mongoose.Schema({
-    senderName: String,
-    receiverName: String,
-    pickupLocation: String,
-    destination: String,
-    cargoType: String,
-    weight: Number,
 
-    evType: {
+    // Shipment Details
+    pickupLocation: {
         type: String,
+        required: true,
     },
-    
-    driverName: {
+
+    destination: {
         type: String,
+        required: true,
     },
-    
-    vehicleNumber: {
+
+    pickupDate: {
         type: String,
     },
 
-    paymentMethod: {
+    pickupTime: {
         type: String,
-        default: "",
-    },
-    
-    transactionId: {
-        type: String,
-        default: "",
-    },
-    
-    paymentStatus: {
-        type: String,
-        default: "Pending",
     },
 
+    // Contact Information
+    senderName: {
+        type: String,
+        required: true,
+    },
+
+    senderPhone: {
+        type: String,
+    },
+
+    receiverName: {
+        type: String,
+        required: true,
+    },
+
+    receiverPhone: {
+        type: String,
+    },
+
+    // Package Information
+    cargoType: {
+        type: String,
+        required: true,
+    },
+
+    packageDescription: {
+        type: String,
+    },
+
+    weight: {
+        type: Number,
+        required: true,
+    },
+
+    fragile: {
+        type: Boolean,
+        default: false,
+    },
+
+    // Metro Booking
     originMetro: {
         type: String,
-        default: ""
+        default: "",
     },
 
     destinationMetro: {
         type: String,
-        default: ""
+        default: "",
     },
 
     metroSlot: {
         type: String,
-        default: ""
+        default: "",
     },
 
-    status: {
+    // EV Assignment
+    evType: {
         type: String,
-        default: "Pending"
+        default: "",
+    },
+
+    driverName: {
+        type: String,
+        default: "",
+    },
+
+    vehicleNumber: {
+        type: String,
+        default: "",
     },
 
     eta: {
         type: String,
         default: "",
     },
-    
+
     estimatedCost: {
         type: String,
         default: "",
+    },
+
+    // Payment
+    paymentMethod: {
+        type: String,
+        default: "",
+    },
+
+    transactionId: {
+        type: String,
+        default: "",
+    },
+
+    paymentStatus: {
+        type: String,
+        default: "Pending",
+    },
+
+    // Overall Booking Status
+    status: {
+        type: String,
+        default: "Pending",
     },
 
 }, { timestamps: true });

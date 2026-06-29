@@ -1,40 +1,243 @@
-.bookmetro-container{
+/* =========================
+        PAGE
+========================= */
+
+.metro-container{
     min-height:100vh;
+    background:#f5f5f5;
     display:flex;
     justify-content:center;
-    align-items:center;
-    background:#f5f7fb;
+    padding:20px;
 }
 
-.bookmetro-card{
-    width:500px;
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 20px rgba(0,0,0,.1);
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+.metro-card{
+    width:100%;
+    max-width:7800px;
+    background:#fff;
+    border-radius:12px;
+    padding:22px 28px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.bookmetro-card h1{
+/* =========================
+        TITLE
+========================= */
+
+.metro-card h1{
     text-align:center;
+    font-size:28px;
+    font-weight:600;
+    color:#222;
+    margin-bottom:18px;
 }
 
-.bookmetro-card input,
-.bookmetro-card select{
-    padding:14px;
-    font-size:16px;
-    border:1px solid #ccc;
+/* =========================
+         MAP
+========================= */
+
+.metro-map{
+    width:85%;
+    height:300px;
+    margin:0 auto 18px;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.map-legend{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    font-size:13px;
+    color:#666;
+    margin-top:12px;
+    margin-bottom:22px;
+}
+
+/* =========================
+      DROPDOWNS
+========================= */
+
+.metro-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin:25px 0;
+
+}
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.input-group label{
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    color:#444;
+
+    font-weight:500;
+
+}
+
+.input-group select{
+
+    width:100%;
+
+    height:40px;
+
+    border:1px solid #d9d9d9;
+
     border-radius:8px;
+
+    padding:0 12px;
+
+    color:#1c2238;
+
+    background:#fff;
+
+    font-size:13px;
+
 }
 
-.bookmetro-card button{
-    padding:14px;
+.input-group select:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+.input-group option{
+    color:#1c2238;
+    background:#fff;
+}
+
+/* =========================
+      ROUTE
+========================= */
+
+.route-section{
+    border-top:1px solid #ececec;
+    border-bottom:1px solid #ececec;
+    padding:18px 0;
+}
+
+.route-card{
+    width:82%;
+    margin:25px auto;
+    border-top:1px solid #e8e8e8;
+    padding-top:22px;
+}
+
+.route-section h2{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:18px;
+    color:#222;
+}
+
+.route-item{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    align-items:center;
+    gap:16px;
+    padding:8px 0;
+    font-size:15px;
+}
+
+.route-item span{
+    color:#666;
+    font-weight:400;
+}
+
+.route-item strong{
+    justify-self:start;
+    color:#222;
+    font-weight:600;
+    text-align:left;
+}
+
+/* =========================
+     RECOMMENDATION
+========================= */
+
+.recommendation{
+    padding:18px 0;
+}
+
+.recommendation h3{
+    text-align:center;
+    font-size:20px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.recommendation p{
+    text-align:center;
+    color:#666;
+    line-height:1.6;
+    margin:6px 0;
+}
+
+/* =========================
+        BUTTON
+========================= */
+
+.metro-card button{
+    width:100%;
+    margin-top:18px;
+    padding:13px;
     background:#2563eb;
     color:white;
     border:none;
     border-radius:8px;
+    font-size:15px;
+    font-weight:600;
     cursor:pointer;
-    font-size:16px;
+    transition:.2s;
+}
+
+.metro-card button:hover:not(:disabled){
+    background:#1d4ed8;
+}
+
+.metro-card button:disabled{
+    background:#c8c8c8;
+    cursor:not-allowed;
+}
+
+/* =========================
+      RESPONSIVE
+========================= */
+
+@media (max-width:900px){
+
+    .metro-card{
+        padding:20px;
+    }
+
+    .metro-map{
+        height:300px;
+    }
+
+    .metro-form{
+        grid-template-columns:1fr;
+    }
+
+    .route-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+
 }

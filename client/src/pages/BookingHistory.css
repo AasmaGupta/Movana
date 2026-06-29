@@ -20,6 +20,8 @@
 .history-card h1{
     text-align:center;
     line-height: normal;
+    color:rgb(52, 55, 141);
+
 }
 
 .history-card input,
