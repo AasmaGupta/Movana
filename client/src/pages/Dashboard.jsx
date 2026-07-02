@@ -17,7 +17,7 @@ function Dashboard() {
 
                 <div className="card" onClick={() => navigate("/bookcargo")}> <h3>Book Cargo</h3> </div>
 
-                <div className="card" onClick={() => navigate('/bookmetro')}><h3>Book Metro</h3></div>
+                <div className="cardp" onClick={() => navigate('/bookmetro')}><h3>Book Metro</h3></div>
 
                 <div className="card" onClick={() => navigate('/bookev')}>🚚<h3>Book EV</h3></div>
 

@@ -38,3 +38,176 @@
 .card h3{
     margin-top:15px;
 }
+
+.cardp{
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        145deg,
+        rgba(18,22,34,.96),
+        rgba(10,13,20,.98)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:38px 28px;
+
+    color:white;
+
+    text-align:center;
+
+    transition:.35s ease;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* glowing route */
+.cardp::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:24px;
+    left:30px;
+    right:30px;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,255,255,.15),
+        #64b5ff,
+        rgba(255,255,255,.15)
+    );
+
+    box-shadow:0 0 12px rgba(100,181,255,.55);
+}
+
+/* glowing stations */
+.cardp::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:18px;
+    left:28px;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#64b5ff;
+
+    box-shadow:
+        0 0 10px #64b5ff,
+        0 0 22px rgba(100,181,255,.65);
+}
+
+.route-end{
+
+    position:absolute;
+
+    top:18px;
+    right:28px;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#64b5ff;
+
+    box-shadow:
+        0 0 10px #64b5ff,
+        0 0 22px rgba(100,181,255,.65);
+}
+
+.cardp:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    border-color:rgba(100,181,255,.4);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.55),
+        0 0 35px rgba(100,181,255,.18);
+}
+
+.cardp:hover::before{
+
+    animation:routeFlow 2s linear infinite;
+}
+
+@keyframes routeFlow{
+
+    0%{
+        filter:hue-rotate(0deg);
+        opacity:.6;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        filter:hue-rotate(20deg);
+        opacity:.6;
+    }
+
+}
+
+.cardp h3{
+
+    margin-top:28px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    color:#fff;
+}
+
+.cardp p{
+
+    margin-top:16px;
+
+    color:#a9b2c3;
+
+    line-height:1.7;
+
+    font-size:15px;
+}
+
+.card-arrow{
+
+    margin-top:24px;
+
+    font-size:26px;
+
+    color:#64b5ff;
+
+    transition:.35s;
+}
+
+.cardp:hover .card-arrow{
+
+    transform:translateX(8px);
+}
