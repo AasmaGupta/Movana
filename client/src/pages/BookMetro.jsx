@@ -26,6 +26,9 @@ function BookMetro() {
     const [stations, setStations] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const [recommendedOrigin, setRecommendedOrigin] = useState(null);
+    const [recommendedDestination, setRecommendedDestination] = useState(null);
+
     const [selectedOrigin, setSelectedOrigin] = useState(null);
     const [selectedDestination, setSelectedDestination] = useState(null);
 
@@ -69,6 +72,13 @@ function BookMetro() {
                         Number(destinationLng),
                         metroStations
                     );
+
+                    // MOVE Recommendation
+
+                    setRecommendedOrigin(origin);
+                    setRecommendedDestination(destination);
+
+                    // Current User Selection
 
                     setSelectedOrigin(origin);
                     setSelectedDestination(destination);
@@ -190,29 +200,50 @@ function BookMetro() {
     
                 <div className="metro-map">
     
-                    <MetroMap
-                        pickupLat={pickupLat}
-                        pickupLng={pickupLng}
-                        destinationLat={destinationLat}
-                        destinationLng={destinationLng}
-                        originStation={selectedOrigin}
-                        destinationStation={selectedDestination}
-                    />
+                <MetroMap
+                    pickupLat={pickupLat}
+                    pickupLng={pickupLng}
+
+                    destinationLat={destinationLat}
+                    destinationLng={destinationLng}
+
+                    recommendedOrigin={recommendedOrigin}
+                    recommendedDestination={recommendedDestination}
+
+                    selectedOrigin={selectedOrigin}
+                    selectedDestination={selectedDestination}
+                />
     
                 </div>
     
                 {/* MAP LEGEND */}
     
                 <div className="map-legend">
-    
-                    <span>Pickup</span>
-    
-                    <span>Origin Metro</span>
-    
-                    <span>Destination Metro</span>
-    
-                    <span>Delivery</span>
-    
+
+                    <span className="legend-blue">
+
+                        🔵 Metro Route (Suggested)
+
+                    </span>
+
+                    <span className="legend-red">
+
+                        🔴 Warehouse/Marketplace
+
+                    </span>
+
+                    {(recommendedOrigin?.name !== selectedOrigin?.name ||
+
+                    recommendedDestination?.name !== selectedDestination?.name) && (
+
+                        <span className="legend-green">
+
+                            🟢 Selected Metro Station
+
+                        </span>
+
+                    )}
+
                 </div>
     
                 {/* BOOKING DETAILS */}

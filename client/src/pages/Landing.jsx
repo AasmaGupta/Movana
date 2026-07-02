@@ -5,7 +5,7 @@ function Landing() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="landing-page">
 
       {/* Navbar */}
       <nav className="navbar">
@@ -30,7 +30,7 @@ function Landing() {
       <section className="hero">
 
         <div className="hero-left">
-          <h1>Metro-Optimized Vehicle Ecosystem</h1>
+          <h1>Metro-Optimized</h1><h1> VehicleEcosystem</h1>
 
           <p>
             A smart logistics platform integrating Warehouses,
@@ -51,13 +51,6 @@ function Landing() {
               Learn More
             </button>
           </div>
-        </div>
-
-        <div className="hero-right">
-          <img
-            src="/hero.jpeg"
-            alt="MOVE Preview"
-          />
         </div>
 
       </section>
